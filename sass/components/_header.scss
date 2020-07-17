@@ -1,0 +1,270 @@
+/* HEADER START */
+@media screen and (max-width: 560px) {
+  .header {
+    position: relative;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+
+  @extend %container;
+
+  @media screen and (max-width: 560px) {
+    padding: 10px 15px 10px 15px;
+    justify-content: space-between;
+  }
+}
+
+.logo-container {
+  min-width: 149px;
+}
+
+/* Логотип */
+.logo {
+  display: inline-block;
+
+  @extend %link;
+
+  color: $logo-text-color;
+
+  font-family: $font-logo;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.17;
+
+  @media screen and (min-width: 561px) {
+    font-size: 26px;
+    line-height: 1.19;
+  }
+}
+
+.logo__accent {
+  display: inline-block;
+
+  color: $accent-color;
+}
+
+/* Mobile Menu START */
+.mob-menu-button {
+  width: 40px;
+  height: 40px;
+
+  background-color: $primary-white-color;
+  border: none;
+
+  &:hover,
+  :focus {
+    fill: $accent-color;
+  }
+
+  .icon-cross {
+    display: none;
+  }
+
+  @media screen and (min-width: 561px) {
+    display: none;
+  }
+}
+
+.mob-menu-button.is-open {
+  .icon-cross {
+    display: block;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+}
+
+.menu-container {
+  width: 100%;
+
+  @media screen and (max-width: 560px) {
+    position: absolute;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    top: 100%;
+    left: 0;
+
+    z-index: 999;
+
+    border-top: 1px solid $line-hr-color;
+    background-color: $primary-white-color;
+
+    text-align: center;
+
+    // transform: translateY(-100%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms $timing-function;
+  }
+
+  @media screen and (min-width: 561px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.menu-container.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: initial;
+  // transform: translateY(0);
+}
+/* Mobile Menu END */
+
+/* navigation menu */
+.site-nav {
+  @extend %list;
+
+  @media screen and (min-width: 561px) {
+    display: flex;
+    margin-left: 85px;
+  }
+}
+
+@media screen and (min-width: 561px) {
+  .site-nav__item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.site-nav__link {
+  position: relative;
+
+  @extend %link;
+
+  display: inline-block;
+  padding-top: 40px;
+  padding-bottom: 8px;
+
+  color: $primary-text-color;
+
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  transition: color 250ms $timing-function;
+
+  @media screen and (max-width: 560px) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 561px) {
+    display: block;
+
+    padding-top: 32px;
+    padding-bottom: 28px;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $accent-color;
+
+    opacity: 0;
+    transition: opacity 250ms $timing-function;
+
+    @media screen and (min-width: 561px) {
+      display: block;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+  }
+}
+
+/* Підсвічування поточної сторінки в сменю */
+.site-nav__link--current {
+  color: $accent-color;
+
+  &::after {
+    opacity: 1;
+  }
+}
+
+.contacts {
+  @extend %list;
+
+  margin-left: auto;
+
+  @media screen and (min-width: 561px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 561px) {
+  .contacts__item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .contacts__item:first-child {
+    margin-top: 40px;
+  }
+
+  .contacts__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.contacts__icon {
+  margin-right: 10px;
+
+  color: $secondary-text-color;
+  --color2: currentColor;
+
+  transition-duration: 250ms;
+  transition-timing-function: $timing-function;
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 560px) {
+    justify-content: center;
+  }
+
+  @extend %link;
+
+  color: $secondary-text-color;
+
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  transition: color 250ms $timing-function;
+
+  /* Зміна кольору контакту при наведенні (виділенні) */
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &:hover .contacts__icon,
+  &:focus .contacts__icon {
+    color: $accent-color;
+  }
+}
+/* HEADER END */

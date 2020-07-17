@@ -1,0 +1,79 @@
+/* Постійні клієнти (Our Clients) */
+/* CLIENTS START */
+.clients {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 561px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.clients-title {
+  @extend %text-base;
+
+  margin-bottom: 30px;
+
+  color: $primary-text-color;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.18;
+  text-align: center;
+
+  @media screen and (min-width: 561px) {
+    margin-bottom: 50px;
+
+    font-size: 36px;
+    line-height: 1.17;
+  }
+}
+
+.clients-list {
+  @extend %list;
+
+  display: flex;
+
+  margin: -15px;
+
+  @media screen and (max-width: 560px) {
+    flex-wrap: wrap;
+  }
+}
+
+.client-logo__icon {
+  color: $social-nav-color;
+  --color1: currentColor;
+
+  transition-duration: 250ms;
+  transition-timing-function: $timing-function;
+}
+
+.client-logo {
+  @extend %item-centered;
+
+  margin: 15px;
+
+  width: 210px;
+  height: 90px;
+  border: 1px solid $social-nav-color;
+  border-radius: 4px;
+
+  @media screen and (min-width: 561px) {
+    width: 170px;
+  }
+
+  transition: border-color 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+  }
+
+  &:hover .client-logo__icon,
+  &:focus .client-logo__icon {
+    color: $accent-color;
+  }
+}

@@ -1,0 +1,172 @@
+/* Перелік продуктів (Portfolio) */
+/* PORTFOLIO START */
+.portfolio {
+  border-top: 1px solid $line-hr-color;
+  padding-top: 59px;
+  padding-bottom: 94px;
+
+  @media screen and (min-width: 561px) {
+    padding-top: 93px;
+  }
+}
+
+/* Кнопки фільтру продуктів */
+.portfolio-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-bottom: 35px;
+
+  @media screen and (min-width: 561px) {
+    margin-bottom: 50px;
+  }
+}
+
+.portfolio-filter__radio {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  &:checked + .portfolio-filter__button {
+    color: $primary-white-color;
+    background-color: $accent-color;
+  }
+}
+
+.portfolio-filter__button {
+  display: block;
+
+  @extend %button;
+
+  padding: 6px 22px;
+  margin-right: 8px;
+
+  color: $primary-text-color;
+  background-color: $secondary-bg-color;
+  border: 0px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.1);
+
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.63;
+
+  transition-property: color, background-color;
+  transition: 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $primary-white-color;
+    background-color: $accent-color;
+  }
+
+  @media screen and (max-width: 560px) {
+    margin-bottom: 15px;
+  }
+}
+
+/* Картки з продуктами */
+.products-list {
+  @extend %list;
+
+  margin: -15px;
+
+  @media screen and (min-width: 561px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.products-card {
+  padding-bottom: 20px;
+  margin: 15px;
+  width: 450px;
+
+  border: 1px solid $product-card-border-color;
+
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+  }
+
+  &:hover .products-card__description--is-hidden,
+  &:focus .products-card__description--is-hidden {
+    transform: translateY(0);
+  }
+
+  @media screen and (min-width: 561px) {
+    width: 370px;
+  }
+}
+
+.products-card__link {
+  @extend %link;
+}
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.products-card__title {
+  @extend %text-base;
+
+  margin-bottom: 4px;
+  padding-left: 24px;
+  padding-top: 20px;
+
+  color: $primary-text-color;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.products-card__text {
+  @extend %text-base;
+
+  padding-left: 24px;
+
+  color: $secondary-text-color;
+
+  font-size: 16px;
+  line-height: 1.88;
+}
+
+.products-card__description--is-hidden {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  @extend %text-base;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 24px;
+  padding-right: 24px;
+
+  transform: translateY(100%);
+  transition: transform 250ms $timing-function;
+
+  color: $primary-white-color;
+  background: $product-overlay-color;
+
+  font-size: 18px;
+  line-height: 1.56;
+}
+/* PORTFOLIO END */

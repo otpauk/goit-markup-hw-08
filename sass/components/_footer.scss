@@ -1,0 +1,197 @@
+/* Підвал (Footer) */
+/* FOOTER START */
+.footer {
+  background-color: $footer-bg-color;
+}
+
+.footer-container {
+  @extend %container;
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (max-width: 560px) {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 561px) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+
+.logo--footer {
+  display: block;
+
+  @extend %link;
+
+  margin-bottom: 20px;
+
+  color: $primary-white-color;
+
+  font-style: inherit;
+  font-size: 24px;
+  line-height: 1.17;
+
+  @media screen and (min-width: 561px) {
+    font-size: 22px;
+    line-height: 1.18;
+  }
+}
+
+.address {
+  margin-bottom: 9px;
+
+  color: $primary-white-color;
+
+  font-style: inherit;
+  line-height: 1.71;
+}
+
+.contacts-footer {
+  @extend %list;
+}
+
+.contacts-footer__item:first-child {
+  margin-bottom: 9px;
+}
+
+@media screen and (max-width: 560px) {
+  .contacts-footer__item:last-child {
+    margin-bottom: 60px;
+  }
+}
+
+.contacts-footer__link {
+  @extend %link;
+
+  color: $footer-contacts-color;
+
+  line-height: 1.71;
+
+  transition: color 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.footer-title {
+  display: block;
+  margin-bottom: 20px;
+
+  color: $primary-white-color;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.footer-social-nav__list {
+  display: flex;
+  align-items: center;
+
+  @extend %list;
+
+  @media screen and (max-width: 560px) {
+    margin-bottom: 60px;
+    justify-content: center;
+  }
+}
+
+.footer-social-nav__link {
+  @extend %item-centered;
+
+  @extend %link;
+
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+
+  background-color: $footer-nav-icon-color;
+
+  transition: background-color 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+
+.footer-social-nav__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-social-nav__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Форма реєстрації */
+.reg-form {
+  @media screen and (min-width: 561px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* вікно форми */
+.reg-form__input {
+  width: 450px;
+  height: 50px;
+
+  background-color: $footer-bg-color;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px $button-order-shadow;
+  border-radius: 4px;
+
+  @media screen and (max-width: 560px) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 561px) {
+    margin-right: 12px;
+    width: 358px;
+  }
+}
+
+/* текст форми  */
+.reg-form__input[placeholder] {
+  padding-left: 12px;
+
+  color: $footer-contacts-color;
+
+  font-size: 16px;
+  line-height: 1.88;
+  align-items: center;
+}
+
+/* кнопка форми  */
+.reg-form__button {
+  display: flex;
+
+  @extend %button;
+
+  @media screen and (max-width: 560px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  padding: 10px 28px;
+  border: 0px;
+  min-width: 200px;
+
+  box-shadow: 0px 4px 4px $button-order-shadow;
+
+  font-family: inherit;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+
+  & .reg-form__button-icon {
+    margin-left: 10px;
+  }
+}
+/* FOOTER END */

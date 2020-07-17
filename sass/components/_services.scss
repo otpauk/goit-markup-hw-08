@@ -1,0 +1,62 @@
+/* Перелік послуг (Чем мы занимаемся) */
+/* SERVICES START */
+.services {
+  padding-top: 94px;
+  padding-bottom: 94px;
+
+  font-weight: 700;
+  text-align: center;
+
+  @media screen and (max-width: 980px) {
+    display: none;
+  }
+}
+
+.services-title {
+  @extend %text-base;
+
+  margin-bottom: 50px;
+
+  color: $primary-text-color;
+
+  font-style: normal;
+  font-size: 36px;
+  line-height: 1.17;
+}
+
+.services-list {
+  display: flex;
+
+  @extend %list;
+}
+
+.services-list__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.services-list__link {
+  display: block;
+  position: relative;
+
+  @extend %link;
+}
+
+.services-list__title {
+  position: absolute;
+
+  bottom: 0;
+  width: 100%;
+
+  @extend %text-base;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+  color: $primary-white-color;
+  background: $hero-overlay-color;
+
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.17;
+  text-transform: uppercase;
+}
+/* SERVICES END */

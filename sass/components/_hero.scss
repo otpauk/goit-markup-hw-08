@@ -1,0 +1,117 @@
+/* Герой із зображенням на бекграунді */
+/* HERO START */
+.hero {
+  max-height: 400px;
+  padding-top: 118px;
+  padding-bottom: 118px;
+  /* outline: 1px dashed red; */
+
+  background: $hero-overlay-color;
+
+  background-image: linear-gradient(
+      to right,
+      $hero-overlay-color,
+      $hero-overlay-color
+    ),
+    url(../images/hero-mob.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media screen and (min-resolution: 2dppx),
+    screen and (min-resolution: 192dpi) {
+    background-image: linear-gradient(
+        to right,
+        $hero-overlay-color,
+        $hero-overlay-color
+      ),
+      url(../images/hero-mob@2x.jpg);
+  }
+
+  @media screen and (min-width: 561px) and (max-width: 980px) {
+    background-image: linear-gradient(
+        to right,
+        $hero-overlay-color,
+        $hero-overlay-color
+      ),
+      url(../images/hero-tab.jpg);
+
+    @media screen and (min-resolution: 2dppx),
+      screen and (min-resolution: 192dpi) {
+      background-image: linear-gradient(
+          to right,
+          $hero-overlay-color,
+          $hero-overlay-color
+        ),
+        url(../images/hero-tab@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 981px) {
+    max-height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    background-image: linear-gradient(
+        to right,
+        $hero-overlay-color,
+        $hero-overlay-color
+      ),
+      url(../images/hero.jpg);
+
+    @media screen and (min-resolution: 2dppx),
+      screen and (min-resolution: 192dpi) {
+      background-image: linear-gradient(
+          to right,
+          $hero-overlay-color,
+          $hero-overlay-color
+        ),
+        url(../images/hero@2x.jpg);
+    }
+  }
+}
+
+.hero-title {
+  @extend %text-base;
+  margin-bottom: 30px;
+
+  color: $primary-white-color;
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 981px) {
+    margin-bottom: 46px;
+
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}
+
+/* Кнопка виклику форми замовлення */
+.button-order {
+  display: inline-block;
+
+  @extend %button;
+  @extend %link;
+
+  padding: 10px 32px;
+  min-width: 200px;
+
+  box-shadow: 0px 4px 4px $button-order-shadow;
+
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.button-container {
+  text-align: center;
+}
+/* HERO END */
