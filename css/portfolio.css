@@ -480,7 +480,7 @@ img {
 .products-card {
   padding-bottom: 20px;
   margin: 15px;
-  width: 450px;
+  max-width: 450px;
   border: 1px solid #eeeeee;
 }
 
@@ -497,7 +497,7 @@ img {
 
 @media screen and (min-width: 561px) {
   .products-card {
-    width: 370px;
+    max-width: 370px;
   }
 }
 
