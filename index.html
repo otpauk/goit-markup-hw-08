@@ -8,6 +8,7 @@
       name="description"
       content="Разработка десктопных и мобильных приложений, дизайнерские решения"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Web Studio</title>
     <link
       rel="stylesheet"
@@ -23,92 +24,98 @@
   </head>
   <body>
     <!-- Шапка з меню навігації (Top Line) -->
-    <header class="header">
+    <header>
       <!-- Основна навігація по сайту -->
       <nav class="navigation">
-        <!-- Лого компанії -->
-        <div class="logo-container">
-          <a
-            href="./index.html"
-            class="logo"
-            aria-label="Логотип студии и переход на главную страницу"
-            ><span class="logo__accent">Web</span> Studio</a
+        <div class="container">
+          <!-- Лого компанії -->
+          <div class="logo-container">
+            <a
+              href="./index.html"
+              class="logo"
+              aria-label="Логотип студии и переход на главную страницу"
+              ><span class="logo__accent">Web</span> Studio</a
+            >
+          </div>
+
+          <!-- Кнопка мобільного меню навігації -->
+          <button
+            type="button"
+            class="mob-menu-button"
+            aria-expanded="false"
+            aria-controls="mob-menu-container"
+            data-menu-button
           >
-        </div>
+            <svg
+              width="20"
+              height="20"
+              aria-label="Переключатель мобильного меню"
+            >
+              <use
+                class="icon-cross"
+                href="./images/sprite.svg#icon-mob-icon-cross"
+              ></use>
+              <use
+                class="icon-menu"
+                href="./images/sprite.svg#icon-mob-icon-butter"
+              ></use>
+            </svg>
+          </button>
 
-        <!-- Кнопка мобільного меню навігації -->
-        <button
-          type="button"
-          class="mob-menu-button"
-          aria-expanded="false"
-          aria-controls="mob-menu-container"
-          data-menu-button
-        >
-          <svg
-            width="20"
-            height="20"
-            aria-label="Переключатель мобильного меню"
-          >
-            <use
-              class="icon-cross"
-              href="./images/sprite.svg#icon-mob-icon-cross"
-            ></use>
-            <use
-              class="icon-menu"
-              href="./images/sprite.svg#icon-mob-icon-butter"
-            ></use>
-          </svg>
-        </button>
+          <div class="menu-container" data-menu>
+            <!-- Меню навігації -->
+            <ul class="site-nav">
+              <li class="site-nav__item">
+                <a
+                  href="./index.html"
+                  class="site-nav__link site-nav__link--current"
+                  aria-label="Переход на главную страницу. Информация о студии"
+                  >Студия</a
+                >
+              </li>
+              <li class="site-nav__item">
+                <a
+                  href="./portfolio.html"
+                  class="site-nav__link"
+                  aria-label="Переход на страницу с портфолио"
+                  >Портфолио</a
+                >
+              </li>
+              <li class="site-nav__item">
+                <a href="#" class="site-nav__link" aria-label="Связаться с нами"
+                  >Контакты</a
+                >
+              </li>
+            </ul>
 
-        <div class="menu-container" data-menu>
-          <!-- Меню навігації -->
-          <ul class="site-nav">
-            <li class="site-nav__item">
-              <a
-                href="./index.html"
-                class="site-nav__link site-nav__link--current"
-                aria-label="Переход на главную страницу. Информация о студии"
-                >Студия</a
-              >
-            </li>
-            <li class="site-nav__item">
-              <a
-                href="./portfolio.html"
-                class="site-nav__link"
-                aria-label="Переход на страницу с портфолио"
-                >Портфолио</a
-              >
-            </li>
-            <li class="site-nav__item">
-              <a href="#" class="site-nav__link" aria-label="Связаться с нами"
-                >Контакты</a
-              >
-            </li>
-          </ul>
-
-          <!-- Зв'язок -->
-          <ul class="contacts">
-            <li class="contacts__item">
-              <a
-                href="mailto:info@devstudio.com"
-                class="contacts__link"
-                aria-label="Адрес эллектронной почты. Написать нам"
-                ><svg class="contacts__icon" width="16" height="11">
-                  <use href="./images/sprite.svg#icon-contact-mail"></use></svg
-                >info@devstudio.com
-              </a>
-            </li>
-            <li class="contacts__item">
-              <a
-                href="tel:+380961111111"
-                class="contacts__link"
-                aria-label="Номер телефона. Позвонить нам"
-                ><svg class="contacts__icon" width="10" height="15">
-                  <use href="./images/sprite.svg#icon-contact-phone"></use></svg
-                >+38 096 111 11 11</a
-              >
-            </li>
-          </ul>
+            <!-- Зв'язок -->
+            <ul class="contacts">
+              <li class="contacts__item">
+                <a
+                  href="mailto:info@devstudio.com"
+                  class="contacts__link"
+                  aria-label="Адрес эллектронной почты. Написать нам"
+                  ><svg class="contacts__icon" width="16" height="11">
+                    <use
+                      href="./images/sprite.svg#icon-contact-mail"
+                    ></use></svg
+                  >info@devstudio.com
+                </a>
+              </li>
+              <li class="contacts__item">
+                <a
+                  href="tel:+380961111111"
+                  class="contacts__link"
+                  aria-label="Номер телефона. Позвонить нам"
+                  ><svg class="contacts__icon" width="10" height="15">
+                    <use
+                      href="./images/sprite.svg#icon-contact-phone"
+                    ></use></svg
+                  >+38 096 111 11 11</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -213,7 +220,7 @@
 
       <!-- Особливості у підходах до роботи (Features) -->
       <section class="features">
-        <div class="features-container">
+        <div class="container">
           <!-- Невидимий заголовок (SEO) -->
           <h2 class="visually-hidden">Features</h2>
 
@@ -287,13 +294,15 @@
                     type="image/webp"
                     sizes="370px" />
 
-                  <img
+                  <source
                     srcset="
                       ./images/notebook.jpg    370w,
                       ./images/notebook@2x.jpg 740w
                     "
+                    sizes="370px" />
+
+                  <img
                     src="./images/notebook.jpg"
-                    sizes="370px"
                     alt="Изображение ноутбука на столе"
                     class="services-list__image"
                 /></picture>
@@ -313,13 +322,15 @@
                     type="image/webp"
                     sizes="370px" />
 
-                  <img
+                  <source
                     srcset="
                       ./images/smartphone.jpg    370w,
                       ./images/smartphone@2x.jpg 740w
                     "
+                    sizes="370px" />
+
+                  <img
                     src="./images/smartphone.jpg"
-                    sizes="370px"
                     alt="Изображение смартфона"
                     class="services-list__image"
                 /></picture>
@@ -339,13 +350,15 @@
                     type="image/webp"
                     sizes="370px" />
 
-                  <img
+                  <source
                     srcset="
                       ./images/design.jpg    370w,
                       ./images/design@2x.jpg 740w
                     "
+                    sizes="370px" />
+
+                  <img
                     src="./images/design.jpg"
-                    sizes="370px"
                     alt="Изображение примера дизайна страницы"
                     class="services-list__image"
                 /></picture>
@@ -857,7 +870,7 @@
 
     <!-- Підвал (Footer) -->
     <footer class="footer">
-      <div class="footer-container">
+      <div class="container">
         <div class="footer-contacts">
           <!-- Лого компанії -->
           <a href="./index.html" class="logo logo--footer"

@@ -3,24 +3,30 @@
 .features {
   padding-top: 60px;
 
-  @media screen and (min-width: 561px) {
+  @media screen and (min-width: 981px) {
     padding-top: 94px;
   }
-}
 
-.features-container {
-  @extend %container;
+  .container {
+    padding-bottom: 60px;
 
-  padding-bottom: 60px;
-  border-bottom: 1px solid $line-hr-color;
+    border-bottom: 1px solid $line-hr-color;
 
-  @media screen and (min-width: 561px) {
-    padding-bottom: 94px;
+    @media screen and (min-width: 981px) {
+      padding-bottom: 94px;
+    }
   }
 }
 
 .features-list {
   @extend %list;
+
+  @media screen and (min-width: 561px) and (max-width: 980px) {
+    margin: -15px;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   @media screen and (min-width: 561px) {
     display: flex;
@@ -28,6 +34,7 @@
 }
 
 .features-list__item {
+  width: 100%;
   max-width: 450px;
 
   @media screen and (max-width: 560px) {
@@ -36,7 +43,13 @@
     }
   }
 
-  @media screen and (min-width: 561px) {
+  @media screen and (min-width: 561px) and (max-width: 980px) {
+    margin: 15px;
+
+    max-width: 354px;
+  }
+
+  @media screen and (min-width: 981px) {
     max-width: 270px;
 
     &:not(:last-child) {

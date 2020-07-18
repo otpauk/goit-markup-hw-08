@@ -14,7 +14,8 @@
   text-decoration: none;
 }
 
-.container, .navigation, .footer-container {
+.container {
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -22,19 +23,19 @@
 }
 
 @media screen and (max-width: 560px) {
-  .container, .navigation, .footer-container {
+  .container {
     max-width: 480px;
   }
 }
 
 @media screen and (min-width: 561px) and (max-width: 980px) {
-  .container, .navigation, .footer-container {
+  .container {
     max-width: 768px;
   }
 }
 
 @media screen and (min-width: 981px) {
-  .container, .navigation, .footer-container {
+  .container {
     max-width: 1200px;
   }
 }
@@ -108,12 +109,12 @@ img {
 
 /* HEADER START */
 @media screen and (max-width: 560px) {
-  .header {
+  .navigation {
     position: relative;
   }
 }
 
-.navigation {
+.navigation .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,7 +124,7 @@ img {
 }
 
 @media screen and (max-width: 560px) {
-  .navigation {
+  .navigation .container {
     padding: 10px 15px 10px 15px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -145,7 +146,7 @@ img {
   line-height: 1.17;
 }
 
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 981px) {
   .logo {
     font-size: 26px;
     line-height: 1.19;
@@ -230,7 +231,16 @@ img {
 
 /* Mobile Menu END */
 /* navigation menu */
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 561px) and (max-width: 980px) {
+  .site-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 65px;
+  }
+}
+
+@media screen and (min-width: 981px) {
   .site-nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -314,7 +324,7 @@ img {
   margin-left: auto;
 }
 
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 981px) {
   .contacts {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -325,18 +335,24 @@ img {
   }
 }
 
-@media screen and (min-width: 561px) {
-  .contacts__item:not(:last-child) {
-    margin-right: 30px;
-  }
-}
-
 @media screen and (max-width: 560px) {
   .contacts__item:first-child {
     margin-top: 40px;
   }
   .contacts__item:not(:last-child) {
     margin-bottom: 16px;
+  }
+}
+
+@media screen and (min-width: 561px) and (max-width: 980px) {
+  .contacts__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 981px) {
+  .contacts__item:not(:last-child) {
+    margin-right: 30px;
   }
 }
 
@@ -392,7 +408,7 @@ img {
   padding-bottom: 94px;
 }
 
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 981px) {
   .portfolio {
     padding-top: 93px;
   }
@@ -411,7 +427,7 @@ img {
   margin-bottom: 35px;
 }
 
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 981px) {
   .portfolio-filter {
     margin-bottom: 50px;
   }
@@ -463,12 +479,9 @@ img {
 }
 
 /* Картки з продуктами */
-.products-list {
-  margin: -15px;
-}
-
 @media screen and (min-width: 561px) {
   .products-list {
+    margin: -15px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -477,9 +490,29 @@ img {
   }
 }
 
+@media screen and (max-width: 560px) {
+  .products-list__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 561px) and (max-width: 980px) {
+  .products-list__item {
+    margin: 15px;
+    max-width: 354px;
+  }
+}
+
+@media screen and (min-width: 981px) {
+  .products-list__item {
+    margin: 15px;
+    max-width: 370px;
+  }
+}
+
 .products-card {
   padding-bottom: 20px;
-  margin: 15px;
+  width: 100%;
   max-width: 450px;
   border: 1px solid #eeeeee;
 }
@@ -493,12 +526,6 @@ img {
 .products-card:focus .products-card__description--is-hidden {
   -webkit-transform: translateY(0);
           transform: translateY(0);
-}
-
-@media screen and (min-width: 561px) {
-  .products-card {
-    max-width: 370px;
-  }
 }
 
 .img-wrapper {
@@ -558,19 +585,31 @@ img {
   background-color: #2f303a;
 }
 
-.footer-container {
+.footer .container {
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
-@media screen and (max-width: 560px) {
-  .footer-container {
+@media screen and (max-width: 980px) {
+  .footer .container {
     text-align: center;
   }
 }
 
-@media screen and (min-width: 561px) {
-  .footer-container {
+@media screen and (min-width: 561px) and (max-width: 980px) {
+  .footer .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 981px) {
+  .footer .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -592,7 +631,7 @@ img {
   line-height: 1.17;
 }
 
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 981px) {
   .logo--footer {
     font-size: 22px;
     line-height: 1.18;
@@ -627,6 +666,12 @@ img {
   color: #2196f3;
 }
 
+@media screen and (min-width: 561px) and (max-width: 980px) {
+  .footer-contacts {
+    margin-bottom: 60px;
+  }
+}
+
 .footer-title {
   display: block;
   margin-bottom: 20px;
@@ -634,6 +679,12 @@ img {
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
+}
+
+@media screen and (min-width: 561px) and (max-width: 980px) {
+  .footer-title {
+    text-align: center;
+  }
 }
 
 .footer-social-nav__list {
@@ -677,7 +728,7 @@ img {
 }
 
 /* Форма реєстрації */
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 981px) {
   .reg-form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -701,13 +752,13 @@ img {
   border-radius: 4px;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 980px) {
   .reg-form__input {
     margin-bottom: 20px;
   }
 }
 
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 981px) {
   .reg-form__input {
     margin-right: 12px;
     width: 358px;
@@ -740,7 +791,7 @@ img {
   letter-spacing: 0.06em;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 980px) {
   .reg-form__button {
     margin-left: auto;
     margin-right: auto;

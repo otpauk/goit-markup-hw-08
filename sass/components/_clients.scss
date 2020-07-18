@@ -4,7 +4,7 @@
   padding-top: 60px;
   padding-bottom: 60px;
 
-  @media screen and (min-width: 561px) {
+  @media screen and (min-width: 981px) {
     padding-top: 94px;
     padding-bottom: 94px;
   }
@@ -23,7 +23,7 @@
   line-height: 1.18;
   text-align: center;
 
-  @media screen and (min-width: 561px) {
+  @media screen and (min-width: 981px) {
     margin-bottom: 50px;
 
     font-size: 36px;
@@ -36,10 +36,49 @@
 
   display: flex;
 
-  margin: -15px;
+  @media screen and (max-width: 980px) {
+    flex-wrap: wrap;
+
+    margin: -15px;
+  }
+}
+
+.clients-list__item {
+  width: 100%;
+  max-width: 210px;
+
+  border: 1px solid $social-nav-color;
+  border-radius: 4px;
 
   @media screen and (max-width: 560px) {
-    flex-wrap: wrap;
+    margin: 15px;
+  }
+
+  @media screen and (min-width: 561px) and (max-width: 980px) {
+    margin: 15px;
+
+    max-width: 226px;
+  }
+
+  @media screen and (min-width: 981px) {
+    max-width: 170px;
+    // flex-basis: content;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  transition: border-color 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+  }
+
+  &:hover .client-logo__icon,
+  &:focus .client-logo__icon {
+    color: $accent-color;
   }
 }
 
@@ -54,26 +93,5 @@
 .client-logo {
   @extend %item-centered;
 
-  margin: 15px;
-
-  width: 210px;
   height: 90px;
-  border: 1px solid $social-nav-color;
-  border-radius: 4px;
-
-  @media screen and (min-width: 561px) {
-    width: 170px;
-  }
-
-  transition: border-color 250ms $timing-function;
-
-  &:hover,
-  &:focus {
-    border-color: $accent-color;
-  }
-
-  &:hover .client-logo__icon,
-  &:focus .client-logo__icon {
-    color: $accent-color;
-  }
 }
