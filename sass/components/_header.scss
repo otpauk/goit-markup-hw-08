@@ -118,18 +118,34 @@
 .site-nav {
   @extend %list;
 
-  @media screen and (min-width: 561px) and (max-width: 980px) {
+  @media screen and (min-width: 561px) {
     display: flex;
+  }
+
+  @media screen and (min-width: 561px) and (max-width: 660px) {
+    margin-left: 25px;
+  }
+
+  @media screen and (min-width: 661px) and (max-width: 760px) {
+    margin-left: 35px;
+  }
+
+  @media screen and (min-width: 761px) and (max-width: 980px) {
     margin-left: 65px;
   }
 
   @media screen and (min-width: 981px) {
-    display: flex;
     margin-left: 85px;
   }
 }
 
-@media screen and (min-width: 561px) {
+@media screen and (min-width: 561px) and (max-width: 660px) {
+  .site-nav__item:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
+@media screen and (min-width: 661px) {
   .site-nav__item:not(:last-child) {
     margin-right: 50px;
   }
