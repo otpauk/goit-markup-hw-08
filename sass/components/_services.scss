@@ -30,6 +30,10 @@
   @extend %list;
 }
 
+.services-list__item {
+  width: calc((100% - 2 * 30px) / 3);
+}
+
 .services-list__item:not(:last-child) {
   margin-right: 30px;
 }

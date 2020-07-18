@@ -44,8 +44,9 @@
 }
 
 .clients-list__item {
-  width: 100%;
-  max-width: 210px;
+  // width: 100%;
+  // max-width: 210px;
+  width: calc((100% - 2 * 30px) / 2);
 
   border: 1px solid $social-nav-color;
   border-radius: 4px;
@@ -57,12 +58,13 @@
   @media screen and (min-width: 561px) and (max-width: 980px) {
     margin: 15px;
 
-    max-width: 226px;
+    // max-width: 226px;
+    width: calc((100% - 3 * 30px) / 3);
   }
 
   @media screen and (min-width: 981px) {
-    max-width: 170px;
-    // flex-basis: content;
+    // max-width: 170px;
+    width: calc((100% - 5 * 30px) / 6);
 
     &:not(:last-child) {
       margin-right: 30px;

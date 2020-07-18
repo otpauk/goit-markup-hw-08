@@ -490,6 +490,10 @@ img {
   }
 }
 
+.products-list__item {
+  width: 100%;
+}
+
 @media screen and (max-width: 560px) {
   .products-list__item:not(:last-child) {
     margin-bottom: 30px;
@@ -499,21 +503,19 @@ img {
 @media screen and (min-width: 561px) and (max-width: 980px) {
   .products-list__item {
     margin: 15px;
-    max-width: 354px;
+    width: calc((100% - 2 * 30px) / 2);
   }
 }
 
 @media screen and (min-width: 981px) {
   .products-list__item {
     margin: 15px;
-    max-width: 370px;
+    width: calc((100% - 3 * 30px) / 3);
   }
 }
 
 .products-card {
   padding-bottom: 20px;
-  width: 100%;
-  max-width: 450px;
   border: 1px solid #eeeeee;
 }
 
@@ -741,7 +743,8 @@ img {
 
 /* вікно форми */
 .reg-form__input {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   height: 50px;
   background-color: #2f303a;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -752,9 +755,16 @@ img {
   border-radius: 4px;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 560px) {
   .reg-form__input {
     margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 561px) and (max-width: 980px) {
+  .reg-form__input {
+    margin-bottom: 20px;
+    width: 450px;
   }
 }
 
