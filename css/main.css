@@ -241,13 +241,13 @@ img {
 
 @media screen and (min-width: 561px) and (max-width: 660px) {
   .site-nav {
-    margin-left: 25px;
+    margin-left: 5px;
   }
 }
 
 @media screen and (min-width: 661px) and (max-width: 760px) {
   .site-nav {
-    margin-left: 35px;
+    margin-left: 25px;
   }
 }
 
@@ -263,9 +263,15 @@ img {
   }
 }
 
-@media screen and (min-width: 561px) and (max-width: 660px) {
+@media screen and (min-width: 561px) and (max-width: 600px) {
   .site-nav__item:not(:last-child) {
-    margin-right: 25px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 660px) {
+  .site-nav__item:not(:last-child) {
+    margin-right: 10px;
   }
 }
 
